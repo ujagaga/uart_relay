@@ -30,3 +30,4 @@ To turn it OFF, use:
 
         0xA5, 0x00
 
+The "Doc" folder contains the schematic and a 3D printable model for the box I am using.
