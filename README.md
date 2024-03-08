@@ -14,6 +14,19 @@ A microcontroller triggers the relay but only after receiving the command via UA
 
 I am using an AtTiny85 based board (at 16MHz), but any microcontroller would do. All it needs is UART. AtTiny85 does not have a dedicated UART, so I am using a software serial implementation.
 
-## Status
+To prepare Arduino IDE to work wit AtTiny85, you can add to additional boards:
 
-Just starting this project, so not yet usable
+        https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json
+
+The code sets UART on pins 2 (RX) and 4 (TX) at BAUD 9600. The Relay pin is pin 1 (LED)
+
+To turnthe Relay ON, send bytes:
+
+        0xA5, 0x01
+
+You should receive response "OK"
+
+To turn it OFF, use:
+
+        0xA5, 0x00
+
